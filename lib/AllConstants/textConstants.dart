@@ -1,8 +1,10 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class TextConstants{
   //constants colors
   static var primaryColor=const Color(0xff296e48);
+  static var blackColor= Colors.black54;
 
 //constants text
   static var titleOne="Learn more about Plant";
