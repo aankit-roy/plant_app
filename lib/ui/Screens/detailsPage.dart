@@ -138,7 +138,7 @@ class _DetailsPageState extends State<DetailsPage> {
               width: size.width,
               decoration: BoxDecoration(
                   color: TextConstants.primaryColor.withOpacity(.4),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(30),
                     topLeft: Radius.circular(30),
                   )),
@@ -159,7 +159,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 35),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Text(
@@ -190,7 +190,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Expanded(
@@ -246,7 +246,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       color: TextConstants.primaryColor.withOpacity(.3),
                     )
                   ]),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "BUY NOW",
                   style: TextStyle(

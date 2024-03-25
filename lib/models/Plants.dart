@@ -10,6 +10,7 @@ class Plant{
   final String imageURL;
   bool isFavourited;
   final String description;
+  bool isSelected;
 
   Plant(
   {
@@ -23,7 +24,8 @@ class Plant{
   required this.plantName,
   required this.imageURL,
   required this.isFavourited,
-  required this.description
+  required this.description,
+    required this.isSelected,
   });
   //List of plant data
 static List<Plant> plantList=[
@@ -38,7 +40,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/flowers.png",
       isFavourited: true,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 1,
@@ -51,7 +54,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/flowers.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 2,
@@ -64,7 +68,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 3,
@@ -77,7 +82,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 4,
@@ -90,7 +96,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 5,
@@ -103,7 +110,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 6,
@@ -116,7 +124,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 7,
@@ -129,7 +138,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 8,
@@ -142,7 +152,8 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
   Plant(
       plantId: 9,
@@ -155,9 +166,23 @@ static List<Plant> plantList=[
       imageURL: "assets/images/seeding.png",
       isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
-          "can survive even harshest weather conditions"
+          "can survive even harshest weather conditions",
+    isSelected: false,
   ),
 
 
   ];
+// get favourite item
+static List<Plant> getFavouritedPlants(){
+  List<Plant> _travelList=Plant.plantList;
+  return _travelList.where((element) => element.isFavourited==true).toList();
+
+}
+// get data of cart item
+static List<Plant> addToCartPlants(){
+  List<Plant> _selectedPlants=Plant.plantList;
+  return _selectedPlants.where((element) => element.isSelected==true).toList();
+
+}
+
 }
