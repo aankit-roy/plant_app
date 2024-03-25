@@ -40,6 +40,7 @@ class _CartPageState extends State<CartPage> {
                 ),
               )
             : Container(
+
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 30),
                 height: size.height ,
                 child: Column(
