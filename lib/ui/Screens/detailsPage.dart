@@ -15,6 +15,10 @@ class _DetailsPageState extends State<DetailsPage> {
   bool toggleIsfavourited(bool isFavourited) {
     return !isFavourited;
   }
+  // toggle for cart Page;
+  bool toggleIsaddtoCart (bool isAddedtoCart){
+    return !isAddedtoCart;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -218,7 +222,8 @@ class _DetailsPageState extends State<DetailsPage> {
               height: 55,
               width: 55,
               decoration: BoxDecoration(
-                  color: TextConstants.primaryColor.withOpacity(.5),
+                  color: _PlantList[widget.plantId].isSelected==true ?
+                  TextConstants.primaryColor.withOpacity(.3) : Colors.white,
                   borderRadius: BorderRadius.circular(55),
                   boxShadow: [
                     BoxShadow(
@@ -226,10 +231,20 @@ class _DetailsPageState extends State<DetailsPage> {
                         blurRadius: 7,
                         color: TextConstants.primaryColor.withOpacity(.3))
                   ]),
-              child: const Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              ),
+              child: IconButton(
+                onPressed: (){
+                  setState(() {
+                    bool isAddedCart= toggleIsaddtoCart(_PlantList[widget.plantId].isSelected);
+                    _PlantList[widget.plantId].isSelected = isAddedCart;
+                  });
+
+                },
+                icon:  Icon(
+                  Icons.shopping_cart,
+                  color: _PlantList[widget.plantId].isSelected==true ?
+                          Colors.white : TextConstants.primaryColor,
+                ),
+              )
             ),
             SizedBox(
               width: 20,

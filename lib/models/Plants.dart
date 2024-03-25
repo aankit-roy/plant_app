@@ -38,7 +38,7 @@ static List<Plant> plantList=[
       category:  "Outdoor",
       plantName: "Philodendron",
       imageURL: "assets/images/flowers.png",
-      isFavourited: true,
+      isFavourited: false,
       description: "This plant is one of the best plant. It grows in most of the regions in the world, "
           "can survive even harshest weather conditions",
     isSelected: false,

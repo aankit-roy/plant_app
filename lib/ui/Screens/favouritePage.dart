@@ -40,7 +40,7 @@ class _FavouritepageState extends State<Favouritepage> {
               )
             : Container(
                 padding: EdgeInsets.symmetric(horizontal: 12, vertical: 30),
-                height: size.height * .5,
+                height: size.height ,
                 child: ListView.builder(
                   itemCount: widget.favouritedPlants.length,
                   scrollDirection: Axis.vertical,
@@ -50,6 +50,7 @@ class _FavouritepageState extends State<Favouritepage> {
                         index: index, plantList: widget.favouritedPlants);
                   },
                 ),
-              ));
+              )
+    );
   }
 }
