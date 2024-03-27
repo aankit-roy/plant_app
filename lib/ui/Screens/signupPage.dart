@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/AllConstants/textConstants.dart';
-import 'package:plant_app/ui/Screens/forgotPasswordpage.dart';
 import 'package:plant_app/ui/Screens/rootPage.dart';
-import 'package:plant_app/ui/Screens/signupPage.dart';
+import 'package:plant_app/ui/Screens/signInScreen.dart';
 import 'package:plant_app/ui/Screens/widgets/customeTestfield.dart';
 import 'package:page_transition/page_transition.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+import '../../AllConstants/textConstants.dart';
+
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
+
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Image.asset("assets/images/signin.png"),
+              Image.asset("assets/images/signup.png"),
               const Text(
-                "Sign In",
+                "Sign Up",
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 38),
               ),
               const SizedBox(
@@ -39,6 +40,11 @@ class _SignInScreenState extends State<SignInScreen> {
                 hintText: "Enter username",
               ),
               const customeTextField(
+                icon: Icons.person,
+                obscureText: false,
+                hintText: "Enter fullname",
+              ),
+              const customeTextField(
                 icon: Icons.lock,
                 obscureText: true,
                 hintText: "Enter Password",
@@ -47,23 +53,17 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 18,
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      PageTransition(
-                          child: RootPage(),
-                          type: PageTransitionType.bottomToTop));
-                },
+                onTap: ()  {},
                 child: Container(
                   width: size.width,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   decoration: BoxDecoration(
                       color: TextConstants.primaryColor,
                       borderRadius: BorderRadius.circular(12)),
                   child: const Center(
                     child: Text(
-                      "Sing In",
+                      "Sing Up",
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -73,30 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 14,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context,
-                      PageTransition(
-                          child: ForgotPasswordPage(),
-                          type: PageTransitionType.bottomToTop));
-                },
-                child: Center(
-                  child: Text.rich(TextSpan(children: [
-                    TextSpan(
-                        text: "forgot Password?",
-                        style: TextStyle(
-                            color: TextConstants.blackColor, fontSize: 18)),
-                    TextSpan(
-                        text: " Reset Here",
-                        style: TextStyle(
-                            color: TextConstants.primaryColor, fontSize: 18)),
-                  ])),
-                ),
-              ),
+
               const SizedBox(
                 height: 20,
               ),
@@ -132,7 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: Image.asset("assets/images/google.png"),
                     ),
                     Text(
-                      "Sign In with Google ",
+                      "Sign Up with Google ",
                       style: TextStyle(
                           color: TextConstants.blackColor, fontSize: 20),
                     )
@@ -147,17 +124,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   Navigator.pushReplacement(
                       context,
                       PageTransition(
-                          child: SignUpPage(),
+                          child: SignInScreen(),
                           type: PageTransitionType.bottomToTop));
                 },
                 child: Center(
                   child: Text.rich(TextSpan(children: [
                     TextSpan(
-                        text: " New to Planty?",
+                        text: " Have an Account?",
                         style: TextStyle(
                             color: TextConstants.blackColor, fontSize: 18)),
                     TextSpan(
-                        text: " Register",
+                        text: " Login",
                         style: TextStyle(
                             color: TextConstants.primaryColor, fontSize: 18)),
                   ])),
