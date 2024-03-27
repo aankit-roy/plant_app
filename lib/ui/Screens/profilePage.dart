@@ -62,13 +62,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: TextConstants.blackColor.withOpacity(.4),
                   fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               height: 45,
             ),
             SizedBox(
               height: size.height * .7,
               width: size.width,
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   ProfileWidget(icon: Icons.person,title: "My Profile",),
