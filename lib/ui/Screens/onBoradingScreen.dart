@@ -68,6 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 title: TextConstants.titleThree,
                 description: TextConstants.descriptionThree,
               ),
+
             ],
           ),
           Positioned(

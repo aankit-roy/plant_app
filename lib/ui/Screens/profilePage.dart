@@ -16,17 +16,17 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         height: size.height,
         width: size.width,
         child: Column(
           children: <Widget>[
             Container(
               width: 150,
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 radius: 60,
                 backgroundColor: Colors.transparent,
-                backgroundImage: ExactAssetImage("assets/images/swami.jpg"),
+                backgroundImage: ExactAssetImage("assets/images/women.png"),
               ),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: TextConstants.primaryColor.withOpacity(.5),
                       width: 4)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -42,11 +42,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Swami Vivekananda",
+                    "Aakankshi Roy",
                     style: TextStyle(
                         color: TextConstants.blackColor, fontSize: 25),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 2,
                   ),
                   Icon(
@@ -57,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Text(
-              "swamivevekananda@gmail.com",
+              "Aakankshiroy@gmail.com",
               style: TextStyle(
                   color: TextConstants.blackColor.withOpacity(.4),
                   fontSize: 16),

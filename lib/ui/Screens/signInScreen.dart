@@ -25,7 +25,7 @@ class _SignInScreenState extends State<SignInScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Image.asset("assets/images/signin.png"),
+              Image.asset("assets/images/signup.png"),
               const Text(
                 "Sign In",
                 style: TextStyle(fontWeight: FontWeight.w800, fontSize: 38),

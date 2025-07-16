@@ -18,36 +18,33 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  List<Plant> favouritesList=[];
-  List<Plant> myCartList=[];
+  List<Plant> favouritesList = [];
+  List<Plant> myCartList = [];
 
-  int bottonNavIndex=0;
+  int bottonNavIndex = 0;
   //pages list
-  List<Widget> widgetOption (){
+  List<Widget> widgetOption() {
     return [
       const HomePage(),
-      Favouritepage(favouritedPlants: favouritesList,),
-      CartPage(addedToCartPlants: myCartList,),
+      Favouritepage(
+        favouritedPlants: favouritesList,
+      ),
+      CartPage(
+        addedToCartPlants: myCartList,
+      ),
       const ProfilePage(),
     ];
   }
 
-
   //List of pages icons
-  List<IconData> iconList= [
-     Icons.home,
-     Icons.favorite,
-     Icons.shopping_cart,
+  List<IconData> iconList = [
+    Icons.home,
+    Icons.favorite,
+    Icons.shopping_cart,
     Icons.person,
-
   ];
   // list of pages Titles
-  List<String> titleList=[
-    "Home",
-    "Favourite",
-    "Cart",
-    "Profile"
-  ];
+  List<String> titleList = ["Home", "Favourite", "Cart", "Profile"];
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +53,19 @@ class _RootPageState extends State<RootPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(titleList[bottonNavIndex],style: TextStyle(
+            Text(
+              titleList[bottonNavIndex],
+              style: TextStyle(
+                color: TextConstants.blackColor,
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Icon(
+              Icons.notifications,
               color: TextConstants.blackColor,
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-            ),),
-            Icon(Icons.notifications,color: TextConstants.blackColor,
-                 size: 30.0,
+              size: 30.0,
             )
-
           ],
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -75,14 +76,20 @@ class _RootPageState extends State<RootPage> {
         children: widgetOption(),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Navigator.push(context, PageTransition(child: const ScanPage(),
-              type: PageTransitionType.bottomToTop));
-
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                  child: const ScanPage(),
+                  type: PageTransitionType.bottomToTop));
         },
         backgroundColor: TextConstants.primaryColor,
-        child: const Icon(Icons.qr_code_scanner,size: 30 ,color: Colors.white,),
-      ) ,
+        child: const Icon(
+          Icons.qr_code_scanner,
+          size: 30,
+          color: Colors.white,
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         splashColor: TextConstants.primaryColor,
@@ -92,20 +99,17 @@ class _RootPageState extends State<RootPage> {
         activeIndex: bottonNavIndex,
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.smoothEdge,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
-            bottonNavIndex=index;
-            final List<Plant> favouratedPlant=Plant.getFavouritedPlants();
-            final List<Plant> addedToCartPlants=Plant.addToCartPlants();
+            bottonNavIndex = index;
+            final List<Plant> favouratedPlant = Plant.getFavouritedPlants();
+            final List<Plant> addedToCartPlants = Plant.addToCartPlants();
             //now updating list;
-            favouritesList=favouratedPlant;
-            myCartList=addedToCartPlants.toSet().toList();
-
+            favouritesList = favouratedPlant;
+            myCartList = addedToCartPlants.toSet().toList();
           });
         },
       ),
-
-
     );
   }
 }
